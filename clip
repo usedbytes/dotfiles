@@ -1,0 +1,3 @@
+#!/bin/bash
+tmux show-buffer | xclip -selection clipboard -i
+

@@ -1,0 +1,1 @@
+command! Vimrc so ~/.vimrc
