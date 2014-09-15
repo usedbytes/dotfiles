@@ -1,2 +1,12 @@
 *~
 *.swp
+*.o
+*.lst
+*.d
+*.hex
+*.elf
+*.eep
+*.sym
+*.ko
+*.lss
+*.map
