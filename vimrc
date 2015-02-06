@@ -128,4 +128,4 @@ set wildmenu
 set wildmode=longest:full
 
 " _* will C comment the visual selection
-vmap _* <Esc>`>a*/<Esc>`<i/*<Esc>`>llll<Esc>
+vmap _* <Esc>`>a */<Esc>`<i/* <Esc>`>llll<Esc>
