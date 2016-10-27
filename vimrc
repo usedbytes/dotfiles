@@ -97,9 +97,9 @@ if !exists(":DiffOrig")
 endif
 
 set hidden
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=8
+set softtabstop=8
+set tabstop=8
 set number
 
 :highlight ExtraWhitespace ctermbg=darkgray guibg=gray
@@ -119,7 +119,7 @@ set statusline+=[%n]    "buffer number
 set statusline+=%t      "tail of filename
 set statusline+=%m      "modified flag
 set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
+set statusline+=%c%V,   "cursor column and virtual column if different
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set colorcolumn=80
@@ -129,3 +129,8 @@ set wildmode=longest:full
 
 " _* will C comment the visual selection
 vmap _* <Esc>`>a */<Esc>`<i/* <Esc>`>llll<Esc>
+
+let &tags .= ','.$TAGS
+
+"set list
+set listchars=trail:~,tab:→·,nbsp:░
