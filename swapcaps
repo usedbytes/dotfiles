@@ -1,0 +1,27 @@
+#!/bin/bash
+
+DIR=$(dirname `realpath $0`)
+TOUCHFILE=$DIR/.caps_swapped
+
+SWAP=0
+if [ -n "$1" ]
+then
+	if [ $1 -gt 0 ]
+	then
+		SWAP=1
+	fi
+elif [ ! -f $DIR/.caps_swapped ]
+then
+	SWAP=1
+fi
+
+if [ $SWAP -eq 1 ]
+then
+	setxkbmap -option caps:swapescape
+	touch $DIR/.caps_swapped
+	echo "Caps Lock and ESC swapped"
+else
+	setxkbmap -option
+	rm -f $DIR/.caps_swapped
+	echo "Caps Lock and ESC returned to normal"
+fi

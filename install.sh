@@ -17,3 +17,6 @@ ln -s $CURDIR/tmux.conf ~/.tmux.conf
 
 echo "Installing git settings..."
 ln -s $CURDIR/gitignore_global ~/.gitignore_global
+
+echo "Installing swapcaps..."
+ln -s $CURDIR/swapcaps ~/bin/swapcaps
