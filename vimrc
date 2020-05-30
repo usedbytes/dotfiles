@@ -97,12 +97,12 @@ if !exists(":DiffOrig")
 endif
 
 set hidden
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=8
+set softtabstop=8
+set tabstop=8
 set number
 
-:highlight ExtraWhitespace ctermbg=darkgray guibg=gray
+:highlight ExtraWhitespace ctermbg=8 guibg=#aaaaaa
 :highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " Show spaces before a tab, tabs not at SOL and spaces for indenting:
 :match ExtraWhitespace / \+\ze\t\|[^\t]\zs\t\+\|\_^\t*\zs \+/
@@ -126,6 +126,9 @@ set colorcolumn=80
 
 set wildmenu
 set wildmode=longest:full
+
+"auto format multi-line comment
+set formatoptions+=r
 
 " _* will C comment the visual selection
 vmap _* <Esc>`>a */<Esc>`<i/* <Esc>`>llll<Esc>
