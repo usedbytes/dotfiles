@@ -63,6 +63,8 @@ if has("autocmd")
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
 
+  au BufRead,BufNewFile *.aidl set filetype=java
+
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
@@ -133,4 +135,18 @@ vmap _* <Esc>`>a */<Esc>`<i/* <Esc>`>llll<Esc>
 let &tags .= ','.$TAGS
 
 "set list
-set listchars=trail:~,tab:→·,nbsp:░
+"set listchars=trail:~,tab:→·,nbsp:░
+
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+let g:netrw_winsize   = 30
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+runtime custom/cscope_maps.vim
+runtime custom/fzf_maps.vim
+
+set bg=dark
