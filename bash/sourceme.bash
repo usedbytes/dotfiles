@@ -7,7 +7,7 @@ then
 fi
 
 source $DIR/ps1
-export PATH=$HOME/bin:$DIR/bin:$HOME/.local/bin:$PATH
+export PATH=$HOME/bin:$DIR/../bin:$HOME/.local/bin:$PATH
 export LD_LIBRARY_PATH=$HOME/.local/lib:$LD_LIBRARY_PATH
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
