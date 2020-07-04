@@ -3,7 +3,7 @@ CURDIR=$(pwd)
 
 echo "Installing vim settings..."
 VIMPLUGIN="$HOME/.vim/plugin"
-ln -s $CURDIR/vimrc ~/.vimrc
+ln -s $CURDIR/vim/vimrc ~/.vimrc
 for i in `find $CURDIR/vimplugin -name "*.vim"`; do
 	if [ ! -d "$VIMPLUGIN" ]; then
 		mkdir -p $VIMPLUGIN
