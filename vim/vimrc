@@ -63,6 +63,8 @@ if has("autocmd")
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
 
+  au BufRead,BufNewFile *.aidl set filetype=java
+
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
   au!
@@ -102,12 +104,10 @@ set softtabstop=8
 set tabstop=8
 set number
 
-:highlight ExtraWhitespace ctermbg=8 guibg=#aaaaaa
+:highlight ExtraWhitespace ctermbg=darkgray guibg=gray
 :highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " Show spaces before a tab, tabs not at SOL and spaces for indenting:
 :match ExtraWhitespace / \+\ze\t\|[^\t]\zs\t\+\|\_^\t*\zs \+/
-
-set bg=dark
 
 ":autocmd BufWinEnter * 2match OverLength /\s\+$/
 "match OverLength /\%81v.\+/
@@ -121,7 +121,7 @@ set statusline+=[%n]    "buffer number
 set statusline+=%t      "tail of filename
 set statusline+=%m      "modified flag
 set statusline+=%=      "left/right separator
-set statusline+=%c,     "cursor column
+set statusline+=%c%V,   "cursor column and virtual column if different
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
 set colorcolumn=80
@@ -129,8 +129,24 @@ set colorcolumn=80
 set wildmenu
 set wildmode=longest:full
 
-"auto format multi-line comment
-set formatoptions+=r
-
 " _* will C comment the visual selection
 vmap _* <Esc>`>a */<Esc>`<i/* <Esc>`>llll<Esc>
+
+let &tags .= ','.$TAGS
+
+"set list
+"set listchars=trail:~,tab:→·,nbsp:░
+
+let g:netrw_preview   = 1
+let g:netrw_liststyle = 3
+let g:netrw_winsize   = 30
+
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+call plug#end()
+
+runtime custom/cscope_maps.vim
+runtime custom/fzf_maps.vim
+
+set bg=dark
