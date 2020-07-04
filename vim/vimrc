@@ -107,6 +107,8 @@ set number
 " Show spaces before a tab, tabs not at SOL and spaces for indenting:
 :match ExtraWhitespace / \+\ze\t\|[^\t]\zs\t\+\|\_^\t*\zs \+/
 
+set bg=dark
+
 ":autocmd BufWinEnter * 2match OverLength /\s\+$/
 "match OverLength /\%81v.\+/
 :2match OverLength /\s\+$/
