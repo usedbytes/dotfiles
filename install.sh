@@ -4,11 +4,11 @@ CURDIR=$(pwd)
 echo "Installing vim settings..."
 VIMPLUGIN="$HOME/.vim/plugin"
 ln -s $CURDIR/vim/vimrc ~/.vimrc
-for i in `find $CURDIR/vimplugin -name "*.vim"`; do
+for i in `find $CURDIR/vim/plugin -name "*.vim"`; do
 	if [ ! -d "$VIMPLUGIN" ]; then
 		mkdir -p $VIMPLUGIN
 	fi
-	ln -s $i `echo $i | sed "s;.*/vimplugin;$VIMPLUGIN;g"`
+	ln -s $i `echo $i | sed "s;.*/vim/plugin;$VIMPLUGIN;g"`
 done
 
 echo "Installing tmux settings..."
