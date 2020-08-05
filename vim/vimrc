@@ -151,3 +151,4 @@ runtime custom/cscope_maps.vim
 runtime custom/fzf_maps.vim
 
 set bg=dark
+set cino=N-s
