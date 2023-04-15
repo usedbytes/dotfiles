@@ -1,10 +1,5 @@
 #!/bin/sh
-# http://stackoverflow.com/a/12694189
-DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$DIR" ]]
-then
-	DIR="$PWD"
-fi
+DIR=$HOME/dotfiles
 
 echo "Installing vim settings..."
 VIMPLUGIN="$HOME/.vim/plugin"
